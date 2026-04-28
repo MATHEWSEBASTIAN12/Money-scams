@@ -26,7 +26,9 @@ button {
   border: none;
   cursor: pointer;
 }
-
+#screen1 {
+  display: none;
+}
 @keyframes blink {
   50% { opacity: 0; }
 }

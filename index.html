@@ -30,7 +30,50 @@
 </div>
 
 <audio id="beep" src="https://www.soundjay.com/buttons/beep-07.mp3"></audio>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Security Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- Start Screen -->
+<div id="startScreen" class="center">
+  <h2>🔒 Secure Session</h2>
+  <button onclick="startDemo()">Tap to Continue</button>
+</div>
+
+<!-- Fake Processing Screen -->
+<div id="processingScreen" class="hidden center">
+  <h2 class="warning">⚠️ Verifying Account Activity...</h2>
+  <div class="loader">
+    <div id="progress"></div>
+  </div>
+  <p>Please wait...</p>
+</div>
+
+<!-- Reveal Screen -->
+<div id="resultScreen" class="hidden center">
+  <h1>🚨Your bank account is under threat</h1>
+  <p>since now your phone is hacked.</p>
+  <p>This is a very sensitive page.</p>
+
+  <ul>
+    <li>🚨🚨🚨🚨</li>
+    <li>Never trust unknown QR codes</li>
+    <li>Always verify through official apps</li>
+  </ul>
+
+  <button onclick="showDetails()">What just happened?</button>
+</div>
+
+<audio id="beep beep" src="https://www.soundjay.com/buttons/beep-07.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
 <script src="script.js"></script>
 </body>
 </html>

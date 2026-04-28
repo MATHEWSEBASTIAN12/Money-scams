@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial;
+}
+
+.center {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.warning {
+  color: red;
+  animation: blink 1s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}

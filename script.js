@@ -36,50 +36,42 @@ function startDemo() {
     document.getElementById("screen2").classList.remove("hidden");
   }, 3000);
 }
-body {
-  margin: 0;
-  font-family: Arial;
-  background: black;
-  color: white;
+function startDemo() {
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("processingScreen").classList.remove("hidden");
+
+  const beep = document.getElementById("beep");
+  beep.play();
+
+  // Voice (safe wording)
+  const msg = new SpeechSynthesisUtterance(
+    "Security simulation in progress. Scammers often use fear to trick users. Stay alert."
+  );
+  speechSynthesis.speak(msg);
+
+  // Vibration (mobile)
+  if (navigator.vibrate) {
+    navigator.vibrate([200, 100, 200]);
+  }
+
+  // Progress animation
+  let width = 0;
+  const interval = setInterval(() => {
+    width += 2;
+    document.getElementById("progress").style.width = width + "%";
+
+    if (width >= 100) {
+      clearInterval(interval);
+      showResult();
+    }
+  }, 80);
 }
 
-.center {
-  text-align: center;
-  margin-top: 20%;
+function showResult() {
+  document.getElementById("processingScreen").style.display = "none";
+  document.getElementById("resultScreen").classList.remove("hidden");
 }
 
-button {
-  padding: 12px 25px;
-  font-size: 16px;
-  background: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.warning {
-  color: red;
-  animation: blink 1s infinite;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Loader */
-.loader {
-  width: 80%;
-  height: 20px;
-  border: 1px solid white;
-  margin: 20px auto;
-}
-
-#progress {
-  height: 100%;
-  width: 0%;
-  background: red;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
+function showDetails() {
+  alert("This is a scam : urgency + fear + authority.");
 }
